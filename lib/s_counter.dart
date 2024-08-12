@@ -1,3 +1,4 @@
+import 'package:counter/w_display.dart';
 import 'package:flutter/material.dart';
 
 class CounterScreen extends StatefulWidget {
@@ -66,10 +67,7 @@ class _CounterScreenState extends State<CounterScreen> {
               // wireframe for each widget.
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text(
-                  '$_counter',
-                  style: TextStyle(fontSize: 70),
-                ),
+                CounterDisplay(counter: _counter),
               ],
             ),
           ),
