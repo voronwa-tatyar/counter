@@ -31,8 +31,9 @@ class _CounterScreenState extends State<CounterScreen> {
           color: Colors.transparent,
           child: Center(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
+                Container(), // Empty Container to adjust position
                 CounterDisplay(counter: _counter),
                 InputPad(callback: _incrementCounter)
               ],
