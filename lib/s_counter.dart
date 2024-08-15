@@ -1,6 +1,7 @@
 import 'package:counter/w_display.dart';
 import 'package:counter/w_input_pad.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Stack;
+import 'package:stack/stack.dart';
 
 class CounterScreen extends StatefulWidget {
   const CounterScreen({super.key, required this.title});
@@ -13,10 +14,19 @@ class CounterScreen extends StatefulWidget {
 
 class _CounterScreenState extends State<CounterScreen> {
   int _counter = 0;
+  Stack<int> stack = Stack<int>();
 
   void _incrementCounter(int value) {
     setState(() {
       _counter+=value;
+      stack.push(value);
+    });
+  }
+
+  void _decrementCounter() {
+    setState(() {
+      int value = stack.pop();
+      _counter-=value;
     });
   }
 
