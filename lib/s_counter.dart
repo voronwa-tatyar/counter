@@ -1,5 +1,6 @@
 import 'package:counter/w_display.dart';
 import 'package:counter/w_input_pad.dart';
+import 'package:counter/w_upper_pad.dart';
 import 'package:flutter/material.dart' hide Stack;
 import 'package:stack/stack.dart';
 
@@ -18,15 +19,17 @@ class _CounterScreenState extends State<CounterScreen> {
 
   void _incrementCounter(int value) {
     setState(() {
-      _counter+=value;
+      _counter += value;
       stack.push(value);
     });
   }
 
   void _decrementCounter() {
     setState(() {
-      int value = stack.pop();
-      _counter-=value;
+      if (stack.isNotEmpty) {
+        int value = stack.pop();
+        _counter -= value;
+      }
     });
   }
 
@@ -43,7 +46,8 @@ class _CounterScreenState extends State<CounterScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                Container(), // Empty Container to adjust position
+                UpperPad(callback: _decrementCounter),
+                // Empty Container to adjust position
                 CounterDisplay(counter: _counter),
                 InputPad(callback: _incrementCounter)
               ],
