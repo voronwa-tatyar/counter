@@ -36,22 +36,19 @@ class _CounterScreenState extends State<CounterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: GestureDetector(
-        onTapDown: (details) => _incrementCounter(1),
-        child: Container(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-          color: Colors.transparent,
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                UpperPad(callback: _decrementCounter),
-                // Empty Container to adjust position
-                CounterDisplay(counter: _counter),
-                InputPad(callback: _incrementCounter)
-              ],
-            ),
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        color: Colors.transparent,
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              UpperPad(callback: _decrementCounter),
+              // Empty Container to adjust position
+              CounterDisplay(counter: _counter),
+              InputPad(callback: _incrementCounter)
+            ],
           ),
         ),
       ),
