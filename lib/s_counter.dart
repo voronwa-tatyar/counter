@@ -33,6 +33,13 @@ class _CounterScreenState extends State<CounterScreen> {
     });
   }
 
+  void _resetCounter() {
+    setState(() {
+      stack.clear();
+      _counter = 0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +51,7 @@ class _CounterScreenState extends State<CounterScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              UpperPad(callback: _decrementCounter),
+              UpperPad(onTabCallback: _decrementCounter, onLongPressCallback: _resetCounter,),
               // Empty Container to adjust position
               CounterDisplay(counter: _counter),
               InputPad(callback: _incrementCounter)
