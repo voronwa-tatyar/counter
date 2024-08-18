@@ -9,7 +9,7 @@ class UpperPad extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () => callback.call(),
-      child: const Icon(Icons.replay),
+      child: const Icon(Icons.replay, size: 50,),
     );
   }
 }
