@@ -1,4 +1,4 @@
-package com.example.counter
+package com.gmail.selfdevhelper.counter
 
 import io.flutter.embedding.android.FlutterActivity
 
