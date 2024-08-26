@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const CounterScreen(title: 'Simple Counter'),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
